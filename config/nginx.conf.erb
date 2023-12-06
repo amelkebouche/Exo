@@ -48,11 +48,11 @@ http {
 		}
 
 		## Document root
-		root /app/dist;
+		root /app/public;
 
         location / {
     ## Clean URLs: match on extensionless requests.
-    try_files $uri $uri/ /index.html;
+    try_files $uri $uri/ /newindex.html;
 
     ## Single-page app client-side routing: returns index.html if the requested path doesn't exist.
     ## When enabled, the client-side app must handle its own 404 errors.
@@ -69,7 +69,7 @@ http {
 
 		## Custom error pages
 		error_page 404 /misc/error.html;
-		# error_page 500 /500.html;
+		error_page 500 /misc/error.html;
 	}
 
 	## Canonical Host: redirect to a canonical hostname.
